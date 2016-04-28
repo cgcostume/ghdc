@@ -1,3 +1,41 @@
-.m-t { 
+.m4t { 
+	margin-top: 16ex; 
+}
+
+.m2t { 
+	margin-top: 4ex; 
+}
+
+.m1t { 
 	margin-top: 2ex; 
 }
+
+.m4b { 
+	margin-bottom: 16ex; 
+}
+
+.m2b { 
+	margin-bottom: 4ex; 
+}
+
+.m1b { 
+	margin-bottom: 2ex; 
+}
+
+* {
+	border-radius: 0 !important;
+}
+
+.jumbotron {
+ 	background-color:transparent !important;
+ }
+
+ .chart {
+ 	height: 64ex;
+/*	margin-top: -8%; */
+/*	margin-bottom: -8%; */
+ }
+
+ .chart a {
+/* 	visibility: hidden; */
+ }
