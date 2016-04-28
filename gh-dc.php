@@ -259,7 +259,7 @@ $releases_info = array(
 
 	<div class="row m2t m1b">
 	<div class="col-xs-8 col-xs-offset-2">
-	<footer class="text-center">GitHub Download Count by <a href="www.daniellimberger.de">Daniel Limberger</a></footer>
+	<footer class="text-center">GitHub Download Count by <a href="https://github.com/cgcostume/gh-dc">Daniel Limberger</a></footer>
 	</div>
 	</div>
 </div>
