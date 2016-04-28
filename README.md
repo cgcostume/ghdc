@@ -1,7 +1,4 @@
 # gh-dc
-GitHub Download Count
+GitHub Download Count: config via GET parameters, e.g., ```?user=cginternals&repository=glbinding```. 
 
-Badly php hacked, bootstraped GitHub download count overview.
-Use via json config or GET parameters, e.g., ```?user=cginternals&repositories=glbinding,glraw```.
-
-Example: http://gh-dc.m03p.de/
+Example: [http://gh-dc.m03p.de/](http://gh-dc.m03p.de/?user=cginternals&repository=glbinding).
