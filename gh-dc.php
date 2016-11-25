@@ -151,7 +151,7 @@ if(!$params_exist)
 		<div class="row text-center m1t">
 		<div class="col-xs-8 col-xs-offset-2">
 		<p>Please provide <code>user</code> and <code>repository</code> values, e.g.: 
-		<a href="gh-dc.m03p.de/?user=cginternals&repository=glbinding"><code>?user=cginternals&repository=glbinding</code></a>
+		<a href="/?user=cginternals&repository=glbinding"><code>?user=cginternals&repository=glbinding</code></a>
 		</p></div></div>');
 
 	exit();
