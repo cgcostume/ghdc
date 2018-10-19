@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/" target="_blank">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +12,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 
   <noscript><style>.js-only { display: none; }</style></noscript>
   <script src="https://cdn.jsdelivr.net/g/jquery@2.2.1,bootstrap@3.3.6,amcharts@3.20.3(amcharts.js+pie.js+themes/patterns.js)"></script>
@@ -143,6 +144,17 @@ $auth = array(
 	"token" => "",
 	"agent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.87 Safari/537.36");
 
+if($auth["token"] == "") {
+	echo('
+                <div class="row text-center m1t">
+                <div class="col-xs-8 col-xs-offset-2">
+                <p>GitHub access token not configured.</p>
+                </p></div></div>');
+
+        exit();
+}
+
+
 $params_exist =  array_key_exists('user', $_GET) && array_key_exists('repository', $_GET);
 
 if(!$params_exist)
@@ -150,12 +162,13 @@ if(!$params_exist)
 	echo('
 		<div class="row text-center m1t">
 		<div class="col-xs-8 col-xs-offset-2">
-		<p>Please provide <code>user</code> and <code>repository</code> values, e.g.: 
-		<a href="/?user=cginternals&repository=glbinding"><code>?user=cginternals&repository=glbinding</code></a>
+		<p>Please provide <code>/&lt;user&gt;/&lt;repository&gt;</code>, e.g.: 
+		<a href="/cginternals/glbinding"><code>/cginternals/glbinding</code></a>
 		</p></div></div>');
 
 	exit();
 }
+
 
 $user = $_GET['user'];
 $repository = $_GET['repository'];
@@ -169,6 +182,7 @@ $assets_total = 0; /* in bytes */
 $downloads_by_releases = array();
 $traffic_by_releases = array();
 $assets_by_releases = array(); /* accumulated asset sizes in bytes */
+
 
 foreach($releases as $release)
 {
@@ -205,7 +219,7 @@ $releases_info = array(
 <body>
 
 <div class="container">
-	
+
 	<div class="row m4t">
 	<div class="col-xs-8 col-xs-offset-2">
 	<div class="jumbotron text-center">
@@ -259,7 +273,7 @@ $releases_info = array(
 
 	<div class="row m2t m1b">
 	<div class="col-xs-8 col-xs-offset-2">
-	<footer class="text-center">GitHub Download Count by <a href="https://github.com/cgcostume/gh-dc">Daniel Limberger</a></footer>
+	<footer class="text-center">GitHub Download Count by <a href="https://github.com/cgcostume/ghdc">Daniel Limberger</a></footer>
 	</div>
 	</div>
 </div>
